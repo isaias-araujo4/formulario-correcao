@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Clientes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <form onsubmit="adicionarCliente(event)">
+                <h1>Cadastro de Clientes</h1>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '')" required>
+
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '')" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaClientes"></tbody>
+        </table>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
